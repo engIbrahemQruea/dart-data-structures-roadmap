@@ -1,0 +1,57 @@
+// ✨The Summary✨
+
+// 🧩We need something to give the relation between input size and algorithms efficiency under constraints.
+
+// Time Complexity: Time vs Input
+// Space Complexity: Space vs Input
+
+// 🔥and this is called Big O (Order of)
+
+// 💡O(n): it is Algebraic Term that describes relation between time or space and the order of input size.
+
+// ❌ Big O does not give how much seconds Program will Work.
+// ✅ but it draws relation between time or space and Input size.
+
+// 🏷Big O gives the worst case of algorithm not best case as it does not consider the performance of hardware.
+
+// ⚙️Time Complexity: how the running time of an algorithm grows with input size.
+// 🗂Space Complexity: how the memory usage of an algorithm grows with input size.
+
+// O(1): Excellent very fast.
+// O(log n): very good.
+// O(n): good (fair).
+// O(n log n): bad.
+// O(n^2): very bad.
+bool hasDuplicateSet(List<int> numbers) {
+  final seen = <int>{};
+
+  for (final n in numbers) {
+    if (seen.contains(n)) {
+      return true;
+    }
+    seen.add(n);
+  }
+
+  return false;
+}
+
+bool hasDuplicateForLoop(List<int> numbers) {
+  for (int i = 0; i < numbers.length; i++) {
+    for (int j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] == numbers[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+void main() {
+  // Nested loops
+  // Time: O(n²)
+  // Space: O(1)
+
+  // Set
+  // Time: O(n)
+  // Space: O(n)
+}
