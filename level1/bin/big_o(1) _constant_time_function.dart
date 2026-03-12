@@ -1,0 +1,23 @@
+// ✨The Summary✨
+
+// 🔥big O(1) means the algorithm time does not depend on input size, that is why it is very fast.
+// but if O(n) means the running time grows with input size, so if the input size increases the execution time increases.
+
+// 💡how to calculate O(1): count the number of operations (steps) in the algorithm.
+// and to make it easier we assume each step takes constant time.
+
+// ⚡Big O = 4 * O(1) = 4 O(1) = O(1)
+
+// so Big O = 4 * O(1) as every operation takes O(1).
+// = 4 O(1).
+// in Big O constant factors are ignored, so we remove 4.
+// 👉so the final result is O(1)
+
+// 📌so Big O gives the growth relation between input size and algorithm time/space.
+
+// so O(1) means there is no dependence on input size.
+
+//**************************************************/
+
+//Generics: يمكنك كتابة دالة $O(1)$ تجلب أول عنصر من أي قائمة بغض النظر عن نوعها:
+T getFirstElement<T>(List<T> list) => list[0]; // دائماً O(1)
