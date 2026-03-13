@@ -74,6 +74,68 @@ class MinStack<T extends Comparable> {
   bool get isEmpty => _mainStack.isEmpty;
 }
 
+
+class MyStackOptimazeToShrinking<T> {
+  List<T?> _storage;
+  int _size = 0;
+
+  MyStackOptimazeToShrinking([int capacity = 4]) : _storage = List.filled(capacity, null);
+
+  int get size => _size;
+
+  int get capacity => _storage.length;
+
+  bool get isEmpty => _size == 0;
+
+  T? get top => isEmpty ? null : _storage[_size - 1];
+
+  void push(T element) {
+    if (_size == capacity) {
+      _resize(capacity * 2);
+    }
+
+    _storage[_size] = element;
+    _size++;
+  }
+
+  T? pop() {
+    if (isEmpty) return null;
+
+    _size--;
+    T? value = _storage[_size];
+    _storage[_size] = null;
+
+    // Shrink إذا أصبحت المساحة أكبر بمرتين من العناصر
+    if (_size > 0 && _size <= capacity ~/ 2) {
+      _resize(capacity ~/ 2);
+    }
+
+    return value;
+  }
+
+  void clear() {
+    _storage = List.filled(4, null);
+    _size = 0;
+  }
+
+  void _resize(int newCapacity) {
+    List<T?> newStorage = List.filled(newCapacity, null);
+
+    for (int i = 0; i < _size; i++) {
+      newStorage[i] = _storage[i];
+    }
+
+    _storage = newStorage;
+  }
+
+  @override
+  String toString() {
+    return _storage.take(_size).toList().toString();
+  }
+}
+
+
+
 class MyStack<T> {
   List<T> _storage = [];
 
