@@ -8,7 +8,7 @@ mixin Loggable<T> {
 }
 
 class MyQueue<T> with Loggable<T> {
-  final Queue<T> _queue = Queue<T>();
+  Queue<T> _queue = Queue<T>();
 
   void enqueue(T element) {
     _queue.addLast(element);
@@ -23,4 +23,14 @@ class MyQueue<T> with Loggable<T> {
   }
 
   int get length => _queue.length;
+
+void printElement(){
+  print(_queue.toList());
+}
+
+  void swapWith(MyQueue<T> other) {
+    var temp = _queue;
+    _queue = other._queue;
+    other._queue = temp;
+  }
 }
