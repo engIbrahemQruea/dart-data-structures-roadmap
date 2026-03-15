@@ -43,6 +43,13 @@ void main() {
   head = head.insertAtEnd(1);
   head = head.insertAtEnd(2);
   head = head.insertAtEnd(3);
+  head = head.insertAtEnd(4);
+  head = head.insertAtEnd(5);
   head = head.insertAtBeginning(0);
+  head.printAll();
+  print('\n');
+
+  /// Operation Delete Node on Singly Linked List
+  head = head.deleteNode(3);
   head.printAll();
 }

@@ -35,6 +35,29 @@ extension LinkedListOperations<T> on Node<T>? {
       return this;
     }
   }
+
+  Node<T>? deleteNode(T value) {
+    var head = this;
+    if (head == null) return null;
+
+    // حالة خاصة: إذا كان الحذف في أول عقدة
+    if (head.value == value) {
+      return head.next; // الـ Head الجديد هو العنصر الثاني
+    }
+
+    Node<T>? current = head;
+    // البحث عن العنصر مع الاحتفاظ بالـ current ليكون هو الـ prev
+    while (current?.next != null && current?.next?.value != value) {
+      current = current?.next;
+    }
+
+    // إذا وجدناه، نتخطى العقدة المطلوبة
+    if (current?.next != null) {
+      current?.next = current?.next?.next;
+    }
+
+    return head;
+  }
 }
 
 void isFind(Node<int> head, int value) {
