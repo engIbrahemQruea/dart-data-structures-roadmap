@@ -15,6 +15,11 @@ extension LinkedListOperations<T> on Node<T>? {
     }
     return null;
   }
+  Node<T>? insertAfterNode(Node<T> prevNode, T value){
+    final newNode = Node<T>(value, prevNode.next);
+    prevNode.next = newNode;
+    return newNode;
+  }
 }
 
 void isFind(Node<int> head, int value) {
@@ -23,4 +28,14 @@ void isFind(Node<int> head, int value) {
   } else {
     print('Node Not Found :-(');
   }
+}
+
+void insertAfterNode(Node<int>? head, int valueInsertAfter, int value) {
+  Node<int>? prevNode = head.find(valueInsertAfter);
+  if (prevNode != null) {
+    head = head.insertAfterNode(prevNode, value);
+  }else{
+    print('Node Not Found :-(');
+  }
+
 }

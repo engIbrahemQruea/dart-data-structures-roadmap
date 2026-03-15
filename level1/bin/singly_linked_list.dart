@@ -34,4 +34,7 @@ void main() {
   head.printAll();
 
   isFind(head, 9);
+
+  insertAfterNode(head, 2, 500);
+  head.printAll();
 }
