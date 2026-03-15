@@ -55,8 +55,15 @@ void main() {
   print('\n');
 
 /// Operation Delete First Node on Singly Linked List 
-  head = head.deleteFirstNode();
-  head = head.deleteFirstNode();
-  head = head.deleteFirstNode();
+  // head = head.deleteFirstNode();
+  // head = head.deleteFirstNode();
+  // head = head.deleteFirstNode();
+  // head.printAll();
+
+
+/// Operation Delete Last Node on Singly Linked List
+  head = head.deleteLastNode();
+  head = head.deleteLastNode();
+  head = head.deleteLastNode();
   head.printAll();
 }

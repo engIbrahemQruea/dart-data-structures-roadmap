@@ -58,9 +58,21 @@ extension LinkedListOperations<T> on Node<T>? {
 
     return head;
   }
+
   Node<T>? deleteFirstNode() {
     if (this == null) return null;
     return this!.next;
+  }
+
+  Node<T>? deleteLastNode() {
+    if (this == null || this?.next == null) return null;
+
+    var current = this;
+    while (current?.next?.next != null) {
+      current = current?.next;
+    }
+    current?.next = null;
+    return this;
   }
 }
 
