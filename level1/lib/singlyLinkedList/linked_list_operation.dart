@@ -15,10 +15,25 @@ extension LinkedListOperations<T> on Node<T>? {
     }
     return null;
   }
-  Node<T>? insertAfterNode(Node<T> prevNode, T value){
+
+  Node<T>? insertAfterNode(Node<T> prevNode, T value) {
     final newNode = Node<T>(value, prevNode.next);
     prevNode.next = newNode;
     return newNode;
+  }
+
+  Node<T>? insertAtEnd(T value) {
+    final newNode = Node<T>(value, null);
+    if (this == null) {
+      return newNode;
+    } else {
+      Node<T>? lastNode = this;
+      while (lastNode!.next != null) {
+        lastNode = lastNode.next;
+      }
+      lastNode.next = newNode;
+      return this;
+    }
   }
 }
 
@@ -34,8 +49,7 @@ void insertAfterNode(Node<int>? head, int valueInsertAfter, int value) {
   Node<int>? prevNode = head.find(valueInsertAfter);
   if (prevNode != null) {
     head = head.insertAfterNode(prevNode, value);
-  }else{
+  } else {
     print('Node Not Found :-(');
   }
-
 }

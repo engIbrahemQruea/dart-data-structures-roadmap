@@ -25,16 +25,24 @@ void main() {
   // head = node1;
   // head.printAll();
 
-  head = head.insertAtBeginning(1);
-  head = head.insertAtBeginning(2);
-  head = head.insertAtBeginning(3);
-  head = head.insertAtBeginning(9);
-  head = head.insertAtBeginning(4);
-  head = head.insertAtBeginning(5);
-  head.printAll();
+  // head = head.insertAtBeginning(1);
+  // head = head.insertAtBeginning(2);
+  // head = head.insertAtBeginning(3);
+  // head = head.insertAtBeginning(9);
+  // head = head.insertAtBeginning(4);
+  // head = head.insertAtBeginning(5);
+  // head.printAll();
 
-  isFind(head, 9);
+  // isFind(head, 9);
 
-  insertAfterNode(head, 2, 500);
+  // insertAfterNode(head, 2, 500);
+  // head.printAll();
+
+
+  /// Operation Insert At End on Singly Linked List
+  head = head.insertAtEnd(1);
+  head = head.insertAtEnd(2);
+  head = head.insertAtEnd(3);
+  head = head.insertAtBeginning(0);
   head.printAll();
 }
