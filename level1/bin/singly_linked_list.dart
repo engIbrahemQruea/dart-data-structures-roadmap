@@ -28,7 +28,10 @@ void main() {
   head = head.insertAtBeginning(1);
   head = head.insertAtBeginning(2);
   head = head.insertAtBeginning(3);
+  head = head.insertAtBeginning(9);
   head = head.insertAtBeginning(4);
   head = head.insertAtBeginning(5);
   head.printAll();
+
+  isFind(head, 9);
 }
