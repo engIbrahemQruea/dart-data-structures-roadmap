@@ -52,4 +52,11 @@ void main() {
   /// Operation Delete Node on Singly Linked List
   head = head.deleteNode(3);
   head.printAll();
+  print('\n');
+
+/// Operation Delete First Node on Singly Linked List 
+  head = head.deleteFirstNode();
+  head = head.deleteFirstNode();
+  head = head.deleteFirstNode();
+  head.printAll();
 }

@@ -58,6 +58,10 @@ extension LinkedListOperations<T> on Node<T>? {
 
     return head;
   }
+  Node<T>? deleteFirstNode() {
+    if (this == null) return null;
+    return this!.next;
+  }
 }
 
 void isFind(Node<int> head, int value) {
