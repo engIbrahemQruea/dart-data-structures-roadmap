@@ -8,4 +8,14 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
     }
     return newNode;
   }
+
+  DouLinLisNode<T>? findWhere(bool Function(T value) test) {
+    var current = this;
+    while (current != null) {
+      if (test(current.value)) return current;
+
+      current = current.next;
+    }
+    return null;
+  }
 }

@@ -25,4 +25,14 @@ void main() {
   print("Linked List Contenet:\n");
   head.printList();
   head.printListDetails();
+
+  /// Operation Find Where on Doubly Linked List
+  print("Linked List Contenet:\n");
+  head.printList();
+  print('');
+  if (head.findWhere((value) => value == 3) != null) {
+    print('Node Found :-)');
+  } else {
+    print('Node Not Found :-(');
+  }
 }
