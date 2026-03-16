@@ -1,16 +1,28 @@
+import 'package:level1/doublyLinkedList/doubly_linked_list_operations.dart';
 import 'package:level1/doublyLinkedList/my_doubly_linked_list.dart';
 
 void main() {
-  DouLinLisNode<int>? head;
+  DouLinLisNode<int>? head = null;
 
-  DouLinLisNode<int>? node1;
-  DouLinLisNode<int>? node2;
-  DouLinLisNode<int>? node3;
+  /// Doubly Linked List Implementation
+  // DouLinLisNode<int>? node1;
+  // DouLinLisNode<int>? node2;
+  // DouLinLisNode<int>? node3;
 
-  node3 = DouLinLisNode(3, next: null, prev: node2);
-  node2 = DouLinLisNode(2, next: node3, prev: node1);
-  node1 = DouLinLisNode(1, next: node2, prev: null);
+  // node3 = DouLinLisNode(3, next: null, prev: node2);
+  // node2 = DouLinLisNode(2, next: node3, prev: node1);
+  // node1 = DouLinLisNode(1, next: node2, prev: null);
 
-  head = node1;
-  head.printAll();
+  // head = node1;
+  // head.printAll();
+
+  /// Operation Insert At Beginning on Doubly Linked List
+  head = head.insertAtBeginning(1);
+  head = head.insertAtBeginning(2);
+  head = head.insertAtBeginning(3);
+  head = head.insertAtBeginning(4);
+  head = head.insertAtBeginning(5);
+  print("Linked List Contenet:\n");
+  head.printList();
+  head.printListDetails();
 }
