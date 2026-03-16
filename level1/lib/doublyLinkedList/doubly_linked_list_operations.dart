@@ -18,4 +18,16 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
     }
     return null;
   }
+
+  DouLinLisNode<T>? insertAfter(DouLinLisNode<T>? nodeInsertAfter, T value) {
+    if (nodeInsertAfter == null) return this;
+    final newNode = DouLinLisNode<T>(
+      value,
+      next: nodeInsertAfter.next,
+      prev: nodeInsertAfter,
+    );
+    nodeInsertAfter.next?.prev = newNode;
+    nodeInsertAfter.next = newNode;
+    return this;
+  }
 }

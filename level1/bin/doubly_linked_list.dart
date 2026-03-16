@@ -35,4 +35,10 @@ void main() {
   } else {
     print('Node Not Found :-(');
   }
+
+  print("Linked List Contenet:\n");
+  DouLinLisNode<int>? finNode = head.findWhere((value) => value == 4);
+  head = head.insertAfter(finNode, 400);
+  head.printList();
+  head.printListDetails();
 }
