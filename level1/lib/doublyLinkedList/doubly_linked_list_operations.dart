@@ -55,4 +55,38 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
 
     return this;
   }
+
+  DouLinLisNode<T>? deleteNode(DouLinLisNode<T>? nodeDelete) {
+    var current = this;
+    if (current == null || nodeDelete == null) return null;
+    if (current == nodeDelete) return current = nodeDelete.next;
+
+    if (nodeDelete.next != null) {
+      nodeDelete.next?.prev = nodeDelete.prev;
+    }
+    if (nodeDelete.prev != null) {
+      nodeDelete.prev?.next = nodeDelete.next;
+    }
+    nodeDelete.next = null;
+    nodeDelete.prev = null;
+    return this;
+  }
+
+  DouLinLisNode<T>? deleteNodeModern(DouLinLisNode<T>? node) {
+    if (node == null || this == null) return this;
+
+    // ربط الجيران ببعضهم
+    node.prev?.next = node.next;
+    node.next?.prev = node.prev;
+
+    // إذا كانت العقدة هي الرأس، أرجع الرأس الجديد
+    if (this == node) return node.next;
+
+    // تصفير روابط العقدة المحذوفة (اختياري للأمان)
+    node
+      ..next = null
+      ..prev = null;
+
+    return this;
+  }
 }

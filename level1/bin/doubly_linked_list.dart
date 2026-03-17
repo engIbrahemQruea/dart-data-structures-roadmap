@@ -48,4 +48,12 @@ void main() {
   //head = head.insertAtEndModern(500);
   head.printList();
   head.printListDetails();
+
+  print("Linked List Content Operations - Delete Node:\n");
+  DouLinLisNode<int>? findNode = head.findWhere((value) => value == 500);
+  head = head.deleteNode(findNode);
+  findNode = head.findWhere((value) => value == 400);
+  head = head.deleteNode(findNode);
+  head.printList();
+  head.printListDetails();
 }
