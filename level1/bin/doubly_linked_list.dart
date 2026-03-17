@@ -41,4 +41,11 @@ void main() {
   head = head.insertAfter(finNode, 400);
   head.printList();
   head.printListDetails();
+
+  /// Operation Insert At End on Doubly Linked List
+  print("Linked List Content InsertAtEnd:\n");
+  head = head.insertAtEnd(500);
+  //head = head.insertAtEndModern(500);
+  head.printList();
+  head.printListDetails();
 }

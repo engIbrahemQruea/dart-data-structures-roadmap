@@ -30,4 +30,29 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
     nodeInsertAfter.next = newNode;
     return this;
   }
+
+  DouLinLisNode<T>? insertAtEnd(T value) {
+    final newNode = DouLinLisNode<T>(value, next: null);
+    if (this == null) return newNode;
+    var lastNode = this;
+    while (lastNode?.next != null) {
+      lastNode = lastNode?.next;
+    }
+    newNode.prev = lastNode;
+    lastNode?.next = newNode;
+    return this;
+  }
+
+  DouLinLisNode<T>? insertAtEndModern(T value) {
+    if (this == null) return DouLinLisNode<T>(value);
+
+    var last = this;
+    while (last?.next != null) {
+      last = last?.next;
+    }
+
+    last?.next = DouLinLisNode<T>(value)..prev = last;
+
+    return this;
+  }
 }
