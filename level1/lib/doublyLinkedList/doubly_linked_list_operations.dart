@@ -105,4 +105,20 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
 
     return nextNode;
   }
+
+  DouLinLisNode<T>? deleteLastNode() {
+    if (this == null) return null;
+    // إذا كان هناك عنصر واحد فقط
+    if (this!.next == null) return null;
+    var last = this;
+    while (last?.next != null) {
+      last = last?.next;
+    }
+
+    last?.prev?.next = null;
+    last
+      ?..prev = null
+      ..next = null;
+    return this;
+  }
 }

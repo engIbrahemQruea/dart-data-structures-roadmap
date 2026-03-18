@@ -64,4 +64,12 @@ void main() {
   head.printList();
   print('');
   head.printListDetails();
+
+  /// Operation Delete Last Node on Doubly Linked List
+  print("Linked List Content Operations - Delete Last Node:\n");
+  head = head.deleteLastNode();
+  head.printList();
+  print('');
+
+  head.printListDetails();
 }
