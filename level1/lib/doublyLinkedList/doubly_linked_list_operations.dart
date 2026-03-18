@@ -89,4 +89,20 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
 
     return this;
   }
+
+  DouLinLisNode<T>? deleteFirstNode() {
+    if (this == null) return null;
+
+    final nextNode = this!.next;
+
+    // تصفير روابط العقدة المحذوفة لضمان تنظيف الذاكرة
+    this!
+      ..next = null
+      ..prev = null;
+
+    // تصفير الرابط الخلفي للرأس الجديد
+    nextNode?.prev = null;
+
+    return nextNode;
+  }
 }

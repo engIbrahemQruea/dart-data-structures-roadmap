@@ -49,11 +49,19 @@ void main() {
   head.printList();
   head.printListDetails();
 
+  /// Operation Delete Node on Doubly Linked List
   print("Linked List Content Operations - Delete Node:\n");
   DouLinLisNode<int>? findNode = head.findWhere((value) => value == 500);
   head = head.deleteNode(findNode);
   findNode = head.findWhere((value) => value == 400);
   head = head.deleteNode(findNode);
   head.printList();
+  head.printListDetails();
+
+  /// Operation Delete First Node on Doubly Linked List
+
+  head = head.deleteFirstNode();
+  head.printList();
+  print('');
   head.printListDetails();
 }
