@@ -75,14 +75,11 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
   DouLinLisNode<T>? deleteNodeModern(DouLinLisNode<T>? node) {
     if (node == null || this == null) return this;
 
-    // ربط الجيران ببعضهم
     node.prev?.next = node.next;
     node.next?.prev = node.prev;
 
-    // إذا كانت العقدة هي الرأس، أرجع الرأس الجديد
     if (this == node) return node.next;
 
-    // تصفير روابط العقدة المحذوفة (اختياري للأمان)
     node
       ..next = null
       ..prev = null;
@@ -95,12 +92,10 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
 
     final nextNode = this!.next;
 
-    // تصفير روابط العقدة المحذوفة لضمان تنظيف الذاكرة
     this!
       ..next = null
       ..prev = null;
 
-    // تصفير الرابط الخلفي للرأس الجديد
     nextNode?.prev = null;
 
     return nextNode;
@@ -108,7 +103,6 @@ extension DoublyLinkedListOperations<T> on DouLinLisNode<T>? {
 
   DouLinLisNode<T>? deleteLastNode() {
     if (this == null) return null;
-    // إذا كان هناك عنصر واحد فقط
     if (this!.next == null) return null;
     var last = this;
     while (last?.next != null) {
